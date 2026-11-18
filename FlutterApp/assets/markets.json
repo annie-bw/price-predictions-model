@@ -1,0 +1,758 @@
+[
+  {
+    "market": "Base",
+    "province": "Northern Province",
+    "district": "Gakenke",
+    "latitude": -1.65,
+    "longitude": 29.87
+  },
+  {
+    "market": "Batiment",
+    "province": "Eastern Province",
+    "district": "Bugesera",
+    "latitude": -2.15,
+    "longitude": 30.09
+  },
+  {
+    "market": "Birambo",
+    "province": "Western Province",
+    "district": "Rutsiro",
+    "latitude": -1.92,
+    "longitude": 29.45
+  },
+  {
+    "market": "Bubare",
+    "province": "Eastern Province",
+    "district": "Gatsibo",
+    "latitude": -1.6,
+    "longitude": 30.25
+  },
+  {
+    "market": "Bugarama",
+    "province": "Western Province",
+    "district": "Nyamasheke",
+    "latitude": -2.33,
+    "longitude": 29.21
+  },
+  {
+    "market": "Buhanda",
+    "province": "Southern Province",
+    "district": "Ruhango",
+    "latitude": -2.23,
+    "longitude": 29.66
+  },
+  {
+    "market": "Bumazi",
+    "province": "Western Province",
+    "district": "Nyamasheke",
+    "latitude": -2.45,
+    "longitude": 29.0
+  },
+  {
+    "market": "Bushenge",
+    "province": "Western Province",
+    "district": "Nyamasheke",
+    "latitude": -2.43,
+    "longitude": 29.0
+  },
+  {
+    "market": "Butare",
+    "province": "Southern Province",
+    "district": "Huye",
+    "latitude": -2.6,
+    "longitude": 29.74
+  },
+  {
+    "market": "Byangabo",
+    "province": "Northern Province",
+    "district": "Musanze",
+    "latitude": -1.56,
+    "longitude": 29.55
+  },
+  {
+    "market": "Byumba",
+    "province": "Northern Province",
+    "district": "Gicumbi",
+    "latitude": -1.58,
+    "longitude": 30.06
+  },
+  {
+    "market": "Congo - Nil",
+    "province": "Western Province",
+    "district": "Rutsiro",
+    "latitude": -1.96,
+    "longitude": 29.38
+  },
+  {
+    "market": "Gacurabwenge",
+    "province": "Northern Province",
+    "district": "Gicumbi",
+    "latitude": -1.58,
+    "longitude": 30.07
+  },
+  {
+    "market": "Gahanga",
+    "province": "Kigali City",
+    "district": "Kicukiro",
+    "latitude": -1.98,
+    "longitude": 30.11
+  },
+  {
+    "market": "Gakeli",
+    "province": "Western Province",
+    "district": "Rutsiro",
+    "latitude": -1.95,
+    "longitude": 29.48
+  },
+  {
+    "market": "Gakenke",
+    "province": "Northern Province",
+    "district": "Gakenke",
+    "latitude": -1.65,
+    "longitude": 29.8
+  },
+  {
+    "market": "Gasarenda",
+    "province": "Southern Province",
+    "district": "Nyamagabe",
+    "latitude": -2.51,
+    "longitude": 29.48
+  },
+  {
+    "market": "Gaseke",
+    "province": "Northern Province",
+    "district": "Rulindo",
+    "latitude": -1.62,
+    "longitude": 29.92
+  },
+  {
+    "market": "Gashyushya",
+    "province": "Southern Province",
+    "district": "Kamonyi",
+    "latitude": -2.04,
+    "longitude": 29.84
+  },
+  {
+    "market": "Gatore",
+    "province": "Eastern Province",
+    "district": "Kirehe",
+    "latitude": -2.28,
+    "longitude": 30.59
+  },
+  {
+    "market": "Gatunda",
+    "province": "Southern Province",
+    "district": "Gisagara",
+    "latitude": -2.74,
+    "longitude": 29.85
+  },
+  {
+    "market": "Gicumbi",
+    "province": "Northern Province",
+    "district": "Gicumbi",
+    "latitude": -1.58,
+    "longitude": 30.07
+  },
+  {
+    "market": "Gihembe (Camp)",
+    "province": "Northern Province",
+    "district": "Gicumbi",
+    "latitude": -1.6,
+    "longitude": 30.08
+  },
+  {
+    "market": "Gikongoro",
+    "province": "Southern Province",
+    "district": "Nyamagabe",
+    "latitude": -2.46,
+    "longitude": 29.57
+  },
+  {
+    "market": "Gisagara",
+    "province": "Southern Province",
+    "district": "Gisagara",
+    "latitude": -2.6,
+    "longitude": 29.84
+  },
+  {
+    "market": "Gisenyi",
+    "province": "Western Province",
+    "district": "Administrative unit not available",
+    "latitude": -1.7,
+    "longitude": 29.26
+  },
+  {
+    "market": "Huye",
+    "province": "Southern Province",
+    "district": "Huye",
+    "latitude": -2.58,
+    "longitude": 29.72
+  },
+  {
+    "market": "Kabacuzi",
+    "province": "Southern Province",
+    "district": "Nyamagabe",
+    "latitude": -2.47,
+    "longitude": 29.58
+  },
+  {
+    "market": "Kabarondo",
+    "province": "Eastern Province",
+    "district": "Kayonza",
+    "latitude": -2.02,
+    "longitude": 30.55
+  },
+  {
+    "market": "Kabaya",
+    "province": "Western Province",
+    "district": "Ngororero",
+    "latitude": -1.75,
+    "longitude": 29.54
+  },
+  {
+    "market": "Kabeza",
+    "province": "Eastern Province",
+    "district": "Kirehe",
+    "latitude": -2.31,
+    "longitude": 30.83
+  },
+  {
+    "market": "Kabuga",
+    "province": "Southern Province",
+    "district": "Gisagara",
+    "latitude": -2.69,
+    "longitude": 29.85
+  },
+  {
+    "market": "Kageyo",
+    "province": "Northern Province",
+    "district": "Gicumbi",
+    "latitude": -1.6,
+    "longitude": 30.08
+  },
+  {
+    "market": "Kamembe",
+    "province": "Western Province",
+    "district": "Rusizi",
+    "latitude": -2.48,
+    "longitude": 28.9
+  },
+  {
+    "market": "Karambi",
+    "province": "Southern Province",
+    "district": "Huye",
+    "latitude": -2.51,
+    "longitude": 29.61
+  },
+  {
+    "market": "Karenge",
+    "province": "Northern Province",
+    "district": "Gakenke",
+    "latitude": -1.64,
+    "longitude": 29.82
+  },
+  {
+    "market": "Karongi",
+    "province": "Western Province",
+    "district": "Karongi",
+    "latitude": -2.07,
+    "longitude": 29.35
+  },
+  {
+    "market": "Kayenzi",
+    "province": "Southern Province",
+    "district": "Kamonyi",
+    "latitude": -1.9,
+    "longitude": 29.85
+  },
+  {
+    "market": "Kibirizi",
+    "province": "Southern Province",
+    "district": "Gisagara",
+    "latitude": -2.65,
+    "longitude": 29.78
+  },
+  {
+    "market": "Kibungo",
+    "province": "Eastern Province",
+    "district": "Ngoma",
+    "latitude": -2.16,
+    "longitude": 30.54
+  },
+  {
+    "market": "Kibuye (Karongi)",
+    "province": "Western Province",
+    "district": "Karongi",
+    "latitude": -2.06,
+    "longitude": 29.35
+  },
+  {
+    "market": "Kicukiro",
+    "province": "Kigali City",
+    "district": "Kicukiro",
+    "latitude": -1.98,
+    "longitude": 30.11
+  },
+  {
+    "market": "Kigeme",
+    "province": "Southern Province",
+    "district": "Nyamagabe",
+    "latitude": -2.49,
+    "longitude": 29.52
+  },
+  {
+    "market": "Kigeme (Camp)",
+    "province": "Southern Province",
+    "district": "Nyamagabe",
+    "latitude": -2.48,
+    "longitude": 29.52
+  },
+  {
+    "market": "Kigufi",
+    "province": "Eastern Province",
+    "district": "Kirehe",
+    "latitude": -2.24,
+    "longitude": 30.8
+  },
+  {
+    "market": "Kimironko",
+    "province": "Eastern Province",
+    "district": "Gatsibo",
+    "latitude": -1.75,
+    "longitude": 30.34
+  },
+  {
+    "market": "Kimisagara",
+    "province": "Kigali City",
+    "district": "Nyarugenge",
+    "latitude": -1.95,
+    "longitude": 30.06
+  },
+  {
+    "market": "Kinazi",
+    "province": "Eastern Province",
+    "district": "Bugesera",
+    "latitude": -2.14,
+    "longitude": 30.09
+  },
+  {
+    "market": "Kirambo",
+    "province": "Western Province",
+    "district": "Nyamasheke",
+    "latitude": -2.32,
+    "longitude": 29.14
+  },
+  {
+    "market": "Kiramuruzi",
+    "province": "Eastern Province",
+    "district": "Gatsibo",
+    "latitude": -1.8,
+    "longitude": 30.4
+  },
+  {
+    "market": "Kivuruga",
+    "province": "Western Province",
+    "district": "Karongi",
+    "latitude": -2.16,
+    "longitude": 29.39
+  },
+  {
+    "market": "Kiyanzi",
+    "province": "Eastern Province",
+    "district": "Kirehe",
+    "latitude": -2.35,
+    "longitude": 30.76
+  },
+  {
+    "market": "Kizi",
+    "province": "Southern Province",
+    "district": "Huye",
+    "latitude": -2.53,
+    "longitude": 29.65
+  },
+  {
+    "market": "Kiziba (Camp)",
+    "province": "Western Province",
+    "district": "Karongi",
+    "latitude": -2.13,
+    "longitude": 29.36
+  },
+  {
+    "market": "Kora",
+    "province": "Western Province",
+    "district": "Rubavu",
+    "latitude": -1.6,
+    "longitude": 29.38
+  },
+  {
+    "market": "Mahama (Camp)",
+    "province": "Eastern Province",
+    "district": "Kirehe",
+    "latitude": -2.31,
+    "longitude": 30.84
+  },
+  {
+    "market": "Mahoko",
+    "province": "Western Province",
+    "district": "Rubavu",
+    "latitude": -1.7,
+    "longitude": 29.33
+  },
+  {
+    "market": "Matimba",
+    "province": "Eastern Province",
+    "district": "Nyagatare",
+    "latitude": -1.11,
+    "longitude": 30.43
+  },
+  {
+    "market": "Miko",
+    "province": "Southern Province",
+    "district": "Nyaruguru",
+    "latitude": -2.67,
+    "longitude": 29.61
+  },
+  {
+    "market": "Mubuga",
+    "province": "Western Province",
+    "district": "Karongi",
+    "latitude": -2.14,
+    "longitude": 29.31
+  },
+  {
+    "market": "Mugera",
+    "province": "Eastern Province",
+    "district": "Gatsibo",
+    "latitude": -1.6,
+    "longitude": 30.28
+  },
+  {
+    "market": "Mugina",
+    "province": "Southern Province",
+    "district": "Kamonyi",
+    "latitude": -2.1,
+    "longitude": 29.95
+  },
+  {
+    "market": "Mugombwa",
+    "province": "Southern Province",
+    "district": "Gisagara",
+    "latitude": -2.68,
+    "longitude": 29.85
+  },
+  {
+    "market": "Mugombwa (Camp)",
+    "province": "Southern Province",
+    "district": "Gisagara",
+    "latitude": -2.67,
+    "longitude": 29.85
+  },
+  {
+    "market": "Muhanga",
+    "province": "Southern Province",
+    "district": "Huye",
+    "latitude": -2.43,
+    "longitude": 29.68
+  },
+  {
+    "market": "Muhondo",
+    "province": "Northern Province",
+    "district": "Burera",
+    "latitude": -1.6,
+    "longitude": 29.88
+  },
+  {
+    "market": "Mukamira",
+    "province": "Western Province",
+    "district": "Nyabihu",
+    "latitude": -1.61,
+    "longitude": 29.51
+  },
+  {
+    "market": "Mukarange",
+    "province": "Northern Province",
+    "district": "Gicumbi",
+    "latitude": -1.53,
+    "longitude": 30.08
+  },
+  {
+    "market": "Mulindi",
+    "province": "Kigali City",
+    "district": "Nyarugenge",
+    "latitude": -1.95,
+    "longitude": 30.06
+  },
+  {
+    "market": "Munini",
+    "province": "Eastern Province",
+    "district": "Kirehe",
+    "latitude": -2.31,
+    "longitude": 30.82
+  },
+  {
+    "market": "Musanze",
+    "province": "Northern Province",
+    "district": "Musanze",
+    "latitude": -1.5,
+    "longitude": 29.61
+  },
+  {
+    "market": "Musha",
+    "province": "Eastern Province",
+    "district": "Rwamagana",
+    "latitude": -1.92,
+    "longitude": 30.34
+  },
+  {
+    "market": "Ndago",
+    "province": "Southern Province",
+    "district": "Nyanza",
+    "latitude": -2.42,
+    "longitude": 29.88
+  },
+  {
+    "market": "Nganda",
+    "province": "Eastern Province",
+    "district": "Kirehe",
+    "latitude": -2.32,
+    "longitude": 30.59
+  },
+  {
+    "market": "Ngarama",
+    "province": "Eastern Province",
+    "district": "Gatsibo",
+    "latitude": -1.54,
+    "longitude": 30.24
+  },
+  {
+    "market": "Ngororero",
+    "province": "Western Province",
+    "district": "Nyabihu",
+    "latitude": -1.65,
+    "longitude": 29.62
+  },
+  {
+    "market": "Nkora",
+    "province": "Northern Province",
+    "district": "Musanze",
+    "latitude": -1.52,
+    "longitude": 29.67
+  },
+  {
+    "market": "Nkoto",
+    "province": "Southern Province",
+    "district": "Huye",
+    "latitude": -2.56,
+    "longitude": 29.66
+  },
+  {
+    "market": "Ntunga",
+    "province": "Eastern Province",
+    "district": "Rwamagana",
+    "latitude": -1.96,
+    "longitude": 30.35
+  },
+  {
+    "market": "Ntungaruze",
+    "province": "Eastern Province",
+    "district": "Gatsibo",
+    "latitude": -1.6,
+    "longitude": 30.27
+  },
+  {
+    "market": "Nyabiheke (Camp)",
+    "province": "Eastern Province",
+    "district": "Gatsibo",
+    "latitude": -1.6,
+    "longitude": 30.26
+  },
+  {
+    "market": "Nyabugogo",
+    "province": "Kigali City",
+    "district": "Nyarugenge",
+    "latitude": -1.95,
+    "longitude": 30.06
+  },
+  {
+    "market": "Nyagahanga",
+    "province": "Eastern Province",
+    "district": "Gatsibo",
+    "latitude": -1.61,
+    "longitude": 30.22
+  },
+  {
+    "market": "Nyagahanika",
+    "province": "Western Province",
+    "district": "Rutsiro",
+    "latitude": -1.8,
+    "longitude": 29.33
+  },
+  {
+    "market": "Nyagatare",
+    "province": "Eastern Province",
+    "district": "Nyagatare",
+    "latitude": -1.3,
+    "longitude": 30.32
+  },
+  {
+    "market": "Nyakarambi",
+    "province": "Eastern Province",
+    "district": "Kirehe",
+    "latitude": -2.27,
+    "longitude": 30.68
+  },
+  {
+    "market": "Nyamata",
+    "province": "Eastern Province",
+    "district": "Bugesera",
+    "latitude": -2.21,
+    "longitude": 30.24
+  },
+  {
+    "market": "Nyamirambo",
+    "province": "Kigali City",
+    "district": "Nyarugenge",
+    "latitude": -1.94,
+    "longitude": 30.07
+  },
+  {
+    "market": "Nyamugari",
+    "province": "Eastern Province",
+    "district": "Kirehe",
+    "latitude": -2.28,
+    "longitude": 30.77
+  },
+  {
+    "market": "Nyanza",
+    "province": "Southern Province",
+    "district": "Huye",
+    "latitude": -2.58,
+    "longitude": 29.72
+  },
+  {
+    "market": "Nyarugenge",
+    "province": "Kigali City",
+    "district": "Nyarugenge",
+    "latitude": -1.96,
+    "longitude": 30.06
+  },
+  {
+    "market": "Rambura",
+    "province": "Western Province",
+    "district": "Nyabihu",
+    "latitude": -1.68,
+    "longitude": 29.52
+  },
+  {
+    "market": "Rubavu",
+    "province": "Western Province",
+    "district": "Rubavu",
+    "latitude": -1.68,
+    "longitude": 29.3
+  },
+  {
+    "market": "Rubengera",
+    "province": "Western Province",
+    "district": "Karongi",
+    "latitude": -2.06,
+    "longitude": 29.41
+  },
+  {
+    "market": "Rugarama",
+    "province": "Northern Province",
+    "district": "Rulindo",
+    "latitude": -1.63,
+    "longitude": 29.93
+  },
+  {
+    "market": "Rugogwe",
+    "province": "Southern Province",
+    "district": "Huye",
+    "latitude": -2.49,
+    "longitude": 29.73
+  },
+  {
+    "market": "Ruhango",
+    "province": "Northern Province",
+    "district": "Gakenke",
+    "latitude": -1.65,
+    "longitude": 29.72
+  },
+  {
+    "market": "Ruhengeri",
+    "province": "Northern Province",
+    "district": "Musanze",
+    "latitude": -1.5,
+    "longitude": 29.64
+  },
+  {
+    "market": "Ruhuha",
+    "province": "Eastern Province",
+    "district": "Bugesera",
+    "latitude": -2.15,
+    "longitude": 30.09
+  },
+  {
+    "market": "Rukomo",
+    "province": "Northern Province",
+    "district": "Gicumbi",
+    "latitude": -1.63,
+    "longitude": 30.1
+  },
+  {
+    "market": "Rushashi",
+    "province": "Northern Province",
+    "district": "Gakenke",
+    "latitude": -1.74,
+    "longitude": 29.87
+  },
+  {
+    "market": "Rushonga",
+    "province": "Eastern Province",
+    "district": "Kirehe",
+    "latitude": -2.19,
+    "longitude": 30.83
+  },
+  {
+    "market": "Rusine",
+    "province": "Northern Province",
+    "district": "Rulindo",
+    "latitude": -1.81,
+    "longitude": 30.13
+  },
+  {
+    "market": "Rusumo",
+    "province": "Eastern Province",
+    "district": "Kirehe",
+    "latitude": -2.27,
+    "longitude": 30.71
+  },
+  {
+    "market": "Ruyaga",
+    "province": "Northern Province",
+    "district": "Gicumbi",
+    "latitude": -1.59,
+    "longitude": 30.08
+  },
+  {
+    "market": "Rwagitima",
+    "province": "Eastern Province",
+    "district": "Gatsibo",
+    "latitude": -1.8,
+    "longitude": 30.42
+  },
+  {
+    "market": "Rwamagana",
+    "province": "Eastern Province",
+    "district": "Rwamagana",
+    "latitude": -1.95,
+    "longitude": 30.43
+  },
+  {
+    "market": "Vunga",
+    "province": "Western Province",
+    "district": "Nyabihu",
+    "latitude": -1.69,
+    "longitude": 29.63
+  }
+]
