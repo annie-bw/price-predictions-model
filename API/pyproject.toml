@@ -1,0 +1,26 @@
+[project]
+name = "food-price-api"
+version = "1.0.0"
+description = "Predicts retail food prices (RWF per kg) in Rwandan markets."
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi==0.164.0",
+    "pydantic==2.14.3",
+    "uvicorn==0.54.0",
+    # Must be the same version that saved model/best_model.joblib, or loading fails or warns.
+    "scikit-learn==1.9.1",
+    "pandas==3.1.1",
+    "numpy==2.5.5",
+    "joblib==1.6.0",
+    "python-multipart==0.0.34",
+]
+
+[dependency-groups]
+dev = [
+    "pytest==9.2.0",
+    "httpx==0.28.1",
+    "psutil==7.2.2",
+]
+
+[tool.uv]
+package = false

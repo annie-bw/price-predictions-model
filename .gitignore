@@ -1,0 +1,18 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Raw dataset: the notebook downloads it again from HDX when it's missing
+linear_regression/data/wfp_food_prices_rwa.csv
+
+# Created by /retrain and /rollback at runtime (best_model.joblib is the permanent original)
+API/model/current_model.joblib
+API/model/previous_model.joblib
+API/model/previous_model_info.json
+API/data/previous_training_data.csv
+
+# Editors
+.idea/
+.vscode/
