@@ -32,6 +32,11 @@ flutter run -d chrome --web-port 5000
 
 ## Deploy on Render
 
+The easiest way is the Blueprint in `render.yaml` at the repository root: in Render choose
+**New + → Blueprint**, pick the repository, and enter `ALLOWED_ORIGINS` when asked.
+It sets up the same values as the table below, which you can also enter by hand
+(**New + → Web Service**).
+
 | Setting | Value |
 |---|---|
 | Root directory | `API` |
