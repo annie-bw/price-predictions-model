@@ -97,6 +97,6 @@ def allowed_origins() -> list[str]:
 
     Set ALLOWED_ORIGINS on Render as a comma-separated list to change it.
     """
-    default = "https://your-service.onrender.com,http://localhost:5000"
+    default = "https://food-price-api-w69y.onrender.com,http://localhost:5000"
     value = os.environ.get("ALLOWED_ORIGINS", default)
     return [origin.strip() for origin in value.split(",") if origin.strip()]

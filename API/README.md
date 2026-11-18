@@ -3,7 +3,7 @@
 A FastAPI service that predicts the retail price (RWF per kg) of a food in a Rwandan
 market and month, using the Random Forest from `linear_regression/multivariate.ipynb`.
 
-**Public Swagger UI:** `https://YOUR-SERVICE.onrender.com/docs` *(replace after deploying)*
+**Public Swagger UI:** https://food-price-api-w69y.onrender.com/docs
 
 ## Run it locally
 
@@ -43,7 +43,7 @@ It sets up the same values as the table below, which you can also enter by hand
 | Build command | `pip install -r requirements.txt` |
 | Start command | `uvicorn main:app --host 0.0.0.0 --port $PORT` |
 | Environment variable `PYTHON_VERSION` | `3.13.2` (also set by `.python-version`) |
-| Environment variable `ALLOWED_ORIGINS` | your Render URL and `http://localhost:5000`, comma-separated |
+| Environment variable `ALLOWED_ORIGINS` | `https://food-price-api-w69y.onrender.com,http://localhost:5000` |
 
 ## Routes
 

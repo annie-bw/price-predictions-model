@@ -1,9 +1,8 @@
 /// Settings for talking to the prediction API.
 ///
-/// After deploying the API on Render, replace [baseUrl] with your own
-/// service address (without a trailing slash).
+/// The API runs on Render. [baseUrl] has no trailing slash.
 class ApiConfig {
-  static const String baseUrl = 'https://your-service.onrender.com';
+  static const String baseUrl = 'https://food-price-api-w69y.onrender.com';
   static const String predictPath = '/predict';
 
   /// A free Render service sleeps after 15 minutes without traffic and can
