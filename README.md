@@ -80,14 +80,29 @@ The model uses 8 inputs: `year`, `month`, `latitude`, `longitude`, `admin1` (pro
 
 ## Repository structure
 
-| Path | What it holds |
-|---|---|
-| `summative/pyproject.toml`, `summative/uv.lock` | Python dependencies, managed with uv |
-| `summative/linear_regression/` | The notebook, the training data and the 2026 "new data" |
-| `summative/API/` | FastAPI service (`prediction.py`): `/predict`, `/retrain`, `/rollback`, `/docs` ([API README](summative/API/README.md)) |
-| `summative/FlutterApp/` | One-page Flutter mobile app that calls `/predict` ([app README](summative/FlutterApp/README.md)) |
-| `summative/tools/` | Script that builds the app's market and commodity lists from the training data |
-| `render.yaml` | Render settings for the API (root directory `summative/API`) |
+```
+README.md                  this file
+render.yaml                Render settings for the API (root directory summative/API)
+summative/
+├── pyproject.toml         Python dependencies, managed with uv
+├── uv.lock                exact versions of every package
+├── .python-version        Python 3.13
+├── linear_regression/
+│   └── multivariate.ipynb the notebook: data, charts, the 4 models and the saved best model
+├── API/                   FastAPI service, see the API README for every file
+│   ├── prediction.py      the app and its routes
+│   ├── requirements.txt   what Render installs (exported from uv.lock)
+│   └── best_model.pkl     the Random Forest saved by the notebook
+├── FlutterApp/            one-page mobile app, see the app README for every file
+└── tools/
+    └── generate_markets.py  builds the app's market and commodity lists
+```
+
+Running the notebook downloads the raw data from HDX and writes `data/training_data.csv`,
+`data/new_data.csv` and `best_model.joblib` next to it. Those outputs are not committed:
+the API keeps its own copies (`API/best_model.pkl` and `API/data/`).
+
+More detail: [API README](summative/API/README.md) · [app README](summative/FlutterApp/README.md)
 
 ## Run the API locally
 
@@ -95,7 +110,7 @@ With [uv](https://docs.astral.sh/uv/):
 
 ```bash
 cd summative
-uv sync                                   # creates .venv from uv.lock
+uv sync                                   # creates .venv from uv.lock (with pytest)
 cd API
 uv run uvicorn prediction:app --reload    # then open http://127.0.0.1:8000/docs
 uv run pytest                             # run the tests

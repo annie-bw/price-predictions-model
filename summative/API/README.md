@@ -138,7 +138,7 @@ units and the scale of a file before uploading it, and use `POST /rollback` if n
 
 ## Memory (Render free plan: 512 MB)
 
-Measured locally with `tools/measure_retrain_memory.py` (a retrain with `new_data.csv`):
+Measured locally while retraining with `new_data.csv`:
 
 | Moment | Memory |
 |---|---|
@@ -158,14 +158,18 @@ rows are lost when the service restarts, and it starts again from `best_model.pk
 
 | File | Job |
 |---|---|
-| `prediction.py` | The FastAPI app, CORS and routes. No ML logic. |
-| `best_model.pkl` | The Random Forest pipeline saved by the notebook (never overwritten). |
-| `schemas.py` | Pydantic request and response models. |
-| `model_service.py` | Loads the model, predicts, retrains, keeps the backup. |
-| `reference_data.py` | The known provinces, districts, markets and commodities. |
-| `cleaning.py` | Checks and cleans uploaded rows (including the 10× rule). |
-| `metrics.py` | Accuracy measures: log MSE, typical error, band, price pattern. |
-| `config.py` | Paths, input ranges and the constants above. |
-| `tools/measure_band.py` | Measures the band on new data and writes `model/model_info.json`. |
-| `tools/measure_retrain_memory.py` | Measures peak memory during a retrain. |
-| `tests/test_api.py` | pytest tests. |
+| `prediction.py` | The FastAPI app: CORS and the routes. No ML logic. Render starts this file. |
+| `schemas.py` | Pydantic models: the types and ranges of the 8 inputs, and the shape of every response. They give the 422 errors and the examples in Swagger. |
+| `model_service.py` | Loads the model, predicts, retrains, keeps the backup and rolls back. |
+| `cleaning.py` | Checks and cleans uploaded CSV rows (missing values, ranges, the 10× rule). |
+| `metrics.py` | Accuracy measures: log MSE, typical error, the price band, the price pattern. |
+| `reference_data.py` | The known provinces, districts, markets and commodities, read from the training data, to check names. |
+| `config.py` | File paths, input ranges, allowed CORS origins and the constants above. |
+| `best_model.pkl` | The Random Forest pipeline saved by the notebook. Never overwritten. |
+| `model/model_info.json` | The price band (±26.6%) and which model is in use. Retrained models are saved in this folder too. |
+| `data/training_data.csv` | The rows the model was trained on. `/retrain` adds the new rows to it. |
+| `data/new_data.csv` | 2026 prices the model never saw: the sample file to upload to `/retrain`. |
+| `requirements.txt` | The packages Render installs, exported from `uv.lock`. |
+| `tools/measure_band.py` | Measured the band on `new_data.csv` and wrote `model/model_info.json`. |
+| `tests/conftest.py` | Test setup: runs the API on a temporary copy of the model and data. |
+| `tests/test_api.py` | The pytest tests (19). |

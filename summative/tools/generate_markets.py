@@ -1,11 +1,11 @@
 """Write the market and commodity lists the Flutter app uses for suggestions and auto-fill.
 
-Reads linear_regression/data/training_data.csv and writes:
+Reads API/data/training_data.csv and writes:
 - FlutterApp/assets/markets.json: one entry per market with its province, district,
   latitude and longitude (the most common values when a market has several rows)
 - FlutterApp/assets/commodities.json: the commodity names, sorted
 
-Run from the repository root:  python tools/generate_markets.py
+Run from the summative folder:  uv run python tools/generate_markets.py
 """
 
 import json
@@ -14,7 +14,7 @@ from pathlib import Path
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-TRAINING_DATA = ROOT / "linear_regression" / "data" / "training_data.csv"
+TRAINING_DATA = ROOT / "API" / "data" / "training_data.csv"
 ASSETS = ROOT / "FlutterApp" / "assets"
 
 

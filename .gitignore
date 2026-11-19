@@ -4,8 +4,10 @@ __pycache__/
 *.pyc
 .pytest_cache/
 
-# Raw dataset: the notebook downloads it again from HDX when it's missing
-summative/linear_regression/data/wfp_food_prices_rwa.csv
+# Notebook outputs: running multivariate.ipynb downloads the raw data from HDX and
+# writes these again. The API keeps its own copies (API/best_model.pkl, API/data/).
+summative/linear_regression/data/
+summative/linear_regression/best_model.joblib
 
 # Created by /retrain and /rollback at runtime (best_model.pkl is the permanent original)
 summative/API/model/current_model.joblib
