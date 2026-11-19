@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -9,9 +11,12 @@ import 'theme/app_theme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Load the market and commodity lists once, before the page opens.
+  // Open with the market and commodity lists built into the app...
   final repository = await MarketRepository.load(rootBundle);
   runApp(FoodPriceApp(repository: repository));
+  // ...then, in the background, switch to the API's lists, which include names
+  // added by a retrain. If the API can't be reached, the built-in lists stay.
+  unawaited(repository.refreshFromApi());
 }
 
 /// Root of the app: sets the theme and opens the prediction page.

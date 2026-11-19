@@ -13,9 +13,11 @@ from schemas import (
     HealthResponse,
     PredictionRequest,
     PredictionResponse,
+    ReferenceResponse,
     RetrainResponse,
     RollbackResponse,
 )
+from reference_data import reference_data
 
 
 def create_app(paths: Paths = Paths()) -> FastAPI:
@@ -55,6 +57,13 @@ def create_app(paths: Paths = Paths()) -> FastAPI:
             model_version=serving.version,
             band_percent=serving.band_percent,
         )
+
+    @app.get("/reference", response_model=ReferenceResponse)
+    def reference():
+        """The markets and commodities the current model knows. The app loads these
+        at startup, so names added by a retrain appear in its suggestions."""
+        return ReferenceResponse(markets=reference_data.markets,
+                                 commodities=reference_data.commodities)
 
     @app.post("/predict", response_model=PredictionResponse)
     def predict(request: PredictionRequest):

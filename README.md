@@ -95,7 +95,7 @@ summative/
 │   └── best_model.pkl     the Random Forest saved by the notebook
 ├── FlutterApp/            one-page mobile app, see the app README for every file
 └── tools/
-    └── generate_markets.py  builds the app's market and commodity lists
+    └── generate_markets.py  builds the market and commodity lists built into the app
 ```
 
 Running the notebook downloads the raw data from HDX and writes `data/training_data.csv`,

@@ -1,44 +1,30 @@
-"""Write the market and commodity lists the Flutter app uses for suggestions and auto-fill.
+"""Write the market and commodity lists that are built into the Flutter app.
+
+The app shows these at once and offline. When the API answers, it switches to the API's
+/reference lists, which also include names added by a retrain. Both come from the same
+functions in API/reference_data.py.
 
 Reads API/data/training_data.csv and writes:
 - FlutterApp/assets/markets.json: one entry per market with its province, district,
-  latitude and longitude (the most common values when a market has several rows)
+  latitude and longitude
 - FlutterApp/assets/commodities.json: the commodity names, sorted
 
 Run from the summative folder:  uv run python tools/generate_markets.py
 """
 
 import json
+import sys
 from pathlib import Path
 
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "API"))
+
+from reference_data import build_commodities, build_markets  # noqa: E402
+
 TRAINING_DATA = ROOT / "API" / "data" / "training_data.csv"
 ASSETS = ROOT / "FlutterApp" / "assets"
-
-
-def most_common(values: pd.Series):
-    return values.mode().iloc[0]
-
-
-def build_markets(rows: pd.DataFrame) -> list[dict]:
-    markets = (
-        rows.groupby("market")
-        .agg(province=("admin1", most_common), district=("admin2", most_common),
-             latitude=("latitude", most_common), longitude=("longitude", most_common))
-        .reset_index()
-        .sort_values("market")
-    )
-    return [
-        {"market": row.market, "province": row.province, "district": row.district,
-         "latitude": float(row.latitude), "longitude": float(row.longitude)}
-        for row in markets.itertuples()
-    ]
-
-
-def build_commodities(rows: pd.DataFrame) -> list[str]:
-    return sorted(rows["commodity"].dropna().unique().tolist())
 
 
 def write_json(path: Path, data) -> None:

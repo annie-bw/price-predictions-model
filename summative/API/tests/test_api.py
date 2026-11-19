@@ -1,8 +1,12 @@
+import json
+
 import numpy as np
 import pandas as pd
 import pytest
 
-from conftest import NEW_DATA, VALID_INPUT, csv_upload, make_client
+from conftest import API_DIR, NEW_DATA, VALID_INPUT, csv_upload, make_client
+
+APP_ASSETS = API_DIR.parent / "FlutterApp" / "assets"
 
 
 # ---------- /predict ----------
@@ -62,6 +66,13 @@ def test_health_shows_the_model_version(client):
     assert body["band_percent"] > 0
 
 
+def test_reference_lists_match_the_lists_built_into_the_app(client):
+    body = client.get("/reference").json()
+
+    assert body["markets"] == json.loads((APP_ASSETS / "markets.json").read_text("utf-8"))
+    assert body["commodities"] == json.loads((APP_ASSETS / "commodities.json").read_text("utf-8"))
+
+
 # ---------- /retrain and /rollback ----------
 
 @pytest.fixture(scope="module")
@@ -117,6 +128,7 @@ def test_a_new_commodity_can_be_predicted_after_retraining(client):
     after = client.post("/predict", json=peach_input)
     assert after.status_code == 200
     assert 1200 < after.json()["predicted_price"] < 2700
+    assert "Peaches" in client.get("/reference").json()["commodities"]  # app suggests it
 
 
 def test_retrain_with_shuffled_prices_is_rejected_and_old_model_keeps_serving(client):

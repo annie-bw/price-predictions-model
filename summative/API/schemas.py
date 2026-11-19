@@ -90,3 +90,18 @@ class HealthResponse(BaseModel):
     message: str
     model_version: str
     band_percent: float
+
+
+class MarketInfo(BaseModel):
+    market: str
+    province: str
+    district: str
+    latitude: float
+    longitude: float
+
+
+class ReferenceResponse(BaseModel):
+    """The names /predict accepts right now, for the app's suggestions and auto-fill."""
+
+    markets: list[MarketInfo]
+    commodities: list[str]

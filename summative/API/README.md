@@ -56,6 +56,7 @@ It sets up the same values as the table below, which you can also enter by hand
 |---|---|
 | `GET /` | Health check: the model in use (`original` or `retrained`) and its price-range band. |
 | `POST /predict` | Predicts a price from the 8 inputs and returns a likely range. |
+| `GET /reference` | The markets (with province, district and coordinates) and commodities the current model knows. The app uses it for suggestions. |
 | `POST /retrain` | Upload a CSV of new prices; retrains with a backup and a quality check. |
 | `POST /rollback` | Puts the previous model back after a retrain. |
 | `GET /docs` | Swagger UI. |
@@ -145,9 +146,9 @@ learned the new name and `/predict` accepts it straight away. Before that, it re
 `test_a_new_commodity_can_be_predicted_after_retraining` checks this.
 
 Give the new commodity rows in several months, so the model sees it in training and not
-only in the newest month (which is kept aside as the check set). The app's suggestion list
-is built into the app, so a new name does not appear in the suggestions, but it can still
-be typed in the field.
+only in the newest month (which is kept aside as the check set). The app loads its
+suggestions from `GET /reference` when it starts, so after an accepted retrain, Peaches
+also appears in the app's suggestions.
 
 ## Memory (Render free plan: 512 MB)
 
@@ -176,7 +177,7 @@ rows are lost when the service restarts, and it starts again from `best_model.pk
 | `model_service.py` | Loads the model, predicts, retrains, keeps the backup and rolls back. |
 | `cleaning.py` | Checks and cleans uploaded CSV rows (missing values, ranges, the 10× rule). |
 | `metrics.py` | Accuracy measures: log MSE, typical error, the price band, the price pattern. |
-| `reference_data.py` | The known provinces, districts, markets and commodities, read from the training data, to check names. |
+| `reference_data.py` | The known provinces, districts, markets and commodities, read from the training data: used to check names in `/predict` and returned by `/reference`. |
 | `config.py` | File paths, input ranges, allowed CORS origins and the constants above. |
 | `best_model.pkl` | The Random Forest pipeline saved by the notebook. Never overwritten. |
 | `model/model_info.json` | The price band (±26.6%) and which model is in use. Retrained models are saved in this folder too. |
@@ -185,4 +186,4 @@ rows are lost when the service restarts, and it starts again from `best_model.pk
 | `requirements.txt` | The packages Render installs, exported from `uv.lock`. |
 | `tools/measure_band.py` | Measured the band on `new_data.csv` and wrote `model/model_info.json`. |
 | `tests/conftest.py` | Test setup: runs the API on a temporary copy of the model and data. |
-| `tests/test_api.py` | The pytest tests (20). |
+| `tests/test_api.py` | The pytest tests (21). |

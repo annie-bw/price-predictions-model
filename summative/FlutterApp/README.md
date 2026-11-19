@@ -29,8 +29,10 @@ flutter run -d chrome --web-port 5000
 - **Use my location** finds the nearest market and fills in its details.
 - Short, plain error messages under each field and in the display area.
 
-The market and commodity lists in `assets/` are made from the training data by
-`summative/tools/generate_markets.py`.
+The app opens with the market and commodity lists built into `assets/` (made by
+`summative/tools/generate_markets.py`), then loads the API's `/reference` lists in the
+background. Names added by a retrain (e.g. a new commodity) then appear in the
+suggestions. Without internet, the built-in lists are used.
 
 ## Fake location on the Android emulator
 
@@ -53,7 +55,7 @@ Or from a terminal: `adb emu geo fix 29.739 -2.596` (longitude first).
 | `lib/models/prediction_result.dart` | The API's answer: price, low and high. |
 | `lib/screens/prediction_page.dart` | The one page: puts the sections together and runs the prediction. |
 | `lib/services/prediction_service.dart` | Calls `/predict` and turns errors into plain messages. |
-| `lib/services/market_repository.dart` | Reads `assets/markets.json` and `assets/commodities.json`. |
+| `lib/services/market_repository.dart` | The market and commodity lists: built-in ones from `assets/`, then the API's `/reference` lists. |
 | `lib/services/location_service.dart` | Asks for the phone's location. |
 | `lib/utils/input_validator.dart` | Checks each field and writes the error message. |
 | `lib/utils/name_search.dart` | Finds suggestions while typing (names that start with the text first). |
@@ -69,6 +71,6 @@ Or from a terminal: `adb emu geo fix 29.739 -2.596` (longitude first).
 | `lib/widgets/price_ticket.dart` | The result card with the price and its range. |
 | `lib/widgets/dashed_border.dart` | Draws the dashed borders in the display area and the price ticket. |
 | `assets/` | Market and commodity lists for the suggestions. |
-| `test/` | Widget tests and logic tests (30). |
+| `test/` | Widget tests and logic tests (32). |
 | `android/`, `ios/` | Platform folders Flutter needs to build the app for phones. |
 | `web/` | Only for checking the app in Chrome. |

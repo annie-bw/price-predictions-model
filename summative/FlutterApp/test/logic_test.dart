@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
@@ -155,6 +157,44 @@ void main() {
         throwsA(isA<PredictionException>().having(
             (error) => error.messages, 'messages', [PredictionService.unreachableMessage])),
       );
+    });
+  });
+
+  group('Market and commodity lists', () {
+    test('the API lists replace the built-in ones, so new names are suggested', () async {
+      final repository = loadTestRepository();
+      expect(repository.searchCommodities('peach'), isEmpty);
+
+      final apiLists = {
+        'markets': [
+          {'market': 'Butare', 'province': 'Southern Province', 'district': 'Huye',
+           'latitude': -2.6, 'longitude': 29.74},
+        ],
+        'commodities': [...repository.commodities, 'Peaches'],
+      };
+      final client = MockClient((request) async {
+        expect(request.url.path, '/reference');
+        return http.Response(jsonEncode(apiLists), 200);
+      });
+
+      expect(await repository.refreshFromApi(client: client), isTrue);
+      expect(repository.searchCommodities('peach'), ['Peaches']);
+      expect(repository.findMarket('butare')?.district, 'Huye');
+    });
+
+    test('the built-in lists stay when the API cannot be reached or answers badly', () async {
+      final repository = loadTestRepository();
+      final before = repository.commodities.length;
+      final responses = [
+        MockClient((request) async => throw http.ClientException('offline')),
+        MockClient((request) async => http.Response('Server error', 500)),
+        MockClient((request) async => http.Response('{"markets": "oops"}', 200)),
+      ];
+
+      for (final client in responses) {
+        expect(await repository.refreshFromApi(client: client), isFalse);
+      }
+      expect(repository.commodities.length, before);
     });
   });
 }
