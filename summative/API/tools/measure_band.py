@@ -1,6 +1,6 @@
 """Measure the price-range band of the original model on data it has never seen.
 
-Runs best_model.joblib on the 2026 rows (newer than anything it trained on) and
+Runs best_model.pkl on the 2026 rows (newer than anything it trained on) and
 writes model/model_info.json, which the API loads at startup.
 
 Run from the API folder:  python tools/measure_band.py
@@ -19,7 +19,7 @@ sys.path.insert(0, str(API_DIR))  # so we can reuse the API's own metric functio
 import metrics  # noqa: E402
 
 NEW_DATA = API_DIR.parent / "linear_regression" / "data" / "new_data.csv"
-MODEL = API_DIR / "model" / "best_model.joblib"
+MODEL = API_DIR / "best_model.pkl"
 OUTPUT = API_DIR / "model" / "model_info.json"
 
 

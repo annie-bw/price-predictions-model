@@ -28,7 +28,7 @@ flutter run -d chrome --web-port 5000
 - **Use my location** finds the nearest market and fills in its details.
 - Short, plain error messages under each field and in the display area.
 
-The market and commodity lists in `assets/` are made by `tools/generate_markets.py`
+The market and commodity lists in `assets/` are made by `summative/tools/generate_markets.py`
 (at the repository root) from the training data.
 
 ## Fake location on the Android emulator

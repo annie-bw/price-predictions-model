@@ -65,7 +65,7 @@ class Paths:
 
     @property
     def original_model(self) -> Path:
-        return self.root / "model" / "best_model.joblib"  # never overwritten
+        return self.root / "best_model.pkl"  # never overwritten
 
     @property
     def current_model(self) -> Path:

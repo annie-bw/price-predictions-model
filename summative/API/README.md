@@ -1,27 +1,32 @@
 # Rwanda Food Price Predictor – API
 
 A FastAPI service that predicts the retail price (RWF per kg) of a food in a Rwandan
-market and month, using the Random Forest from `linear_regression/multivariate.ipynb`.
+market and month, using the Random Forest from `summative/linear_regression/multivariate.ipynb`
+(saved here as `best_model.pkl`).
 
 **Public Swagger UI:** https://food-price-api-w69y.onrender.com/docs
 
 ## Run it locally
 
-From this `API/` folder (Python 3.13):
+Dependencies are managed with [uv](https://docs.astral.sh/uv/); `pyproject.toml` and
+`uv.lock` are in the `summative/` folder (Python 3.13):
 
 ```bash
-python -m venv .venv
-.venv\Scripts\activate          # Windows  (macOS/Linux: source .venv/bin/activate)
-pip install -r requirements.txt -r requirements-dev.txt
-uvicorn main:app --reload
+cd summative
+uv sync
+cd API
+uv run uvicorn prediction:app --reload
 ```
+
+`requirements.txt` is exported from `uv.lock` for Render
+(`uv export --format requirements.txt --no-hashes --no-dev -o API/requirements.txt`).
 
 Open http://127.0.0.1:8000/docs to try every route.
 
 Run the tests:
 
 ```bash
-pytest
+uv run pytest
 ```
 
 To use the Flutter app in Chrome against the local API, run it on the port CORS allows:
@@ -39,10 +44,10 @@ It sets up the same values as the table below, which you can also enter by hand
 
 | Setting | Value |
 |---|---|
-| Root directory | `API` |
+| Root directory | `summative/API` |
 | Build command | `pip install -r requirements.txt` |
-| Start command | `uvicorn main:app --host 0.0.0.0 --port $PORT` |
-| Environment variable `PYTHON_VERSION` | `3.13.2` (also set by `.python-version`) |
+| Start command | `uvicorn prediction:app --host 0.0.0.0 --port $PORT` |
+| Environment variable `PYTHON_VERSION` | `3.13.2` |
 | Environment variable `ALLOWED_ORIGINS` | `https://food-price-api-w69y.onrender.com,http://localhost:5000` |
 
 ## Routes
@@ -100,7 +105,7 @@ Uploading the CSV (the 8 input columns plus `price`) starts the retrain:
    The candidate is accepted only if it is at least as good.
 7. **If accepted:** refit on everything, back up the current model to
    `model/previous_model.joblib`, save the new one as `model/current_model.joblib`, add the
-   rows to `data/training_data.csv` and update the band. `model/best_model.joblib` is never
+   rows to `data/training_data.csv` and update the band. `best_model.pkl` is never
    overwritten. `POST /rollback` restores the backup.
 
 ### The price pattern check
@@ -147,13 +152,14 @@ The peak comes from training itself (the serving model plus the new forest and a
 A retrain may therefore run out of memory on the free plan. `/predict` is not affected.
 
 Note that Render's free plan has no persistent disk: a retrained model and the added
-rows are lost when the service restarts, and it starts again from `best_model.joblib`.
+rows are lost when the service restarts, and it starts again from `best_model.pkl`.
 
 ## Files
 
 | File | Job |
 |---|---|
-| `main.py` | The FastAPI app, CORS and routes. No ML logic. |
+| `prediction.py` | The FastAPI app, CORS and routes. No ML logic. |
+| `best_model.pkl` | The Random Forest pipeline saved by the notebook (never overwritten). |
 | `schemas.py` | Pydantic request and response models. |
 | `model_service.py` | Loads the model, predicts, retrains, keeps the backup. |
 | `reference_data.py` | The known provinces, districts, markets and commodities. |

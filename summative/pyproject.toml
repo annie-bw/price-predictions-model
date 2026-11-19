@@ -7,7 +7,7 @@ dependencies = [
     "fastapi==0.164.0",
     "pydantic==2.14.3",
     "uvicorn==0.54.0",
-    # Must be the same version that saved model/best_model.joblib, or loading fails or warns.
+    # Must be the same version that saved best_model.pkl, or loading fails or warns.
     "scikit-learn==1.9.1",
     "pandas==3.1.1",
     "numpy==2.5.5",

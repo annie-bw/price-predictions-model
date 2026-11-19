@@ -58,6 +58,7 @@ def main() -> None:
         root = Path(tmp)
         shutil.copytree(API_DIR / "model", root / "model",
                         ignore=shutil.ignore_patterns("current_model.joblib", "previous_*"))
+        shutil.copy(API_DIR / "best_model.pkl", root)
         (root / "data").mkdir()
         shutil.copy(API_DIR / "data" / "training_data.csv", root / "data")
         new_rows = pd.read_csv(API_DIR / "data" / "new_data.csv")
