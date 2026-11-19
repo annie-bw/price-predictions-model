@@ -2,7 +2,7 @@
 
 They come from the training data. /predict uses them to reject unknown names, and
 /reference sends them to the app for its suggestions and auto-fill. After an accepted
-retrain they are reloaded, so new markets and commodities (e.g. Peaches) become valid.
+retrain they are reloaded, so new markets and commodities become valid.
 """
 
 import difflib

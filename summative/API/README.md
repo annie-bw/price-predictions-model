@@ -139,7 +139,7 @@ units and the scale of a file before uploading it, and use `POST /rollback` if n
 
 ### New commodities and markets
 
-A CSV can bring a commodity or market the model has never seen, for example **Peaches**.
+A CSV can bring a commodity or market the model has never seen.
 The rows are not rejected for their name. If the retrain is accepted, the new model has
 learned the new name and `/predict` accepts it straight away. Before that, it returns 422
 ("Unknown commodity…"), because the model would have no prices to learn from.
@@ -147,7 +147,7 @@ learned the new name and `/predict` accepts it straight away. Before that, it re
 
 Give the new commodity rows in several months, so the model sees it in training and not
 only in the newest month (which is kept aside as the check set). The app loads its
-suggestions from `GET /reference` when it starts, so after an accepted retrain, Peaches
+suggestions from `GET /reference` when it starts, so after an accepted retrain, the new name
 also appears in the app's suggestions.
 
 ## Memory (Render free plan: 512 MB)

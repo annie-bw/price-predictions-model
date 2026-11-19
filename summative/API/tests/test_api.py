@@ -113,22 +113,23 @@ def test_predict_still_works_after_retraining(retrained):
 
 
 def test_a_new_commodity_can_be_predicted_after_retraining(client):
-    # Peaches appear in the 2026 data: same markets and months as Maize, about 1,800 RWF/kg.
+    # A made-up commodity (not in the real data) with the same markets and months as
+    # Maize, at about 1,800 RWF/kg, stands in for a food that is new to the markets.
     rows = pd.read_csv(NEW_DATA)
-    peaches = rows[rows["commodity"] == "Maize"].copy()
-    peaches["commodity"] = "Peaches"
-    peaches["price"] = 1800 * np.random.default_rng(1).uniform(0.9, 1.1, len(peaches))
-    peach_input = dict(VALID_INPUT, commodity="peaches")
+    new_food = rows[rows["commodity"] == "Maize"].copy()
+    new_food["commodity"] = "Test commodity"
+    new_food["price"] = 1800 * np.random.default_rng(1).uniform(0.9, 1.1, len(new_food))
+    new_input = dict(VALID_INPUT, commodity="test commodity")
 
-    assert client.post("/predict", json=peach_input).status_code == 422  # unknown before
+    assert client.post("/predict", json=new_input).status_code == 422  # unknown before
 
-    response = client.post("/retrain", files=csv_upload(pd.concat([rows, peaches])))
+    response = client.post("/retrain", files=csv_upload(pd.concat([rows, new_food])))
 
     assert response.json()["accepted"] is True
-    after = client.post("/predict", json=peach_input)
+    after = client.post("/predict", json=new_input)
     assert after.status_code == 200
     assert 1200 < after.json()["predicted_price"] < 2700
-    assert "Peaches" in client.get("/reference").json()["commodities"]  # app suggests it
+    assert "Test commodity" in client.get("/reference").json()["commodities"]  # app suggests it
 
 
 def test_retrain_with_shuffled_prices_is_rejected_and_old_model_keeps_serving(client):

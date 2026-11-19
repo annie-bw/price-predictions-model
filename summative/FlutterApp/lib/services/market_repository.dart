@@ -11,7 +11,7 @@ import '../utils/name_search.dart';
 ///
 /// The app starts with the lists built into assets/ (made by tools/generate_markets.py),
 /// so it opens at once and works offline. [refreshFromApi] then swaps in the API's
-/// /reference lists, which also include names added by a retrain (e.g. Peaches).
+/// /reference lists, which also include names added by a retrain (e.g. a new commodity).
 class MarketRepository {
   List<Market> _markets;
   List<String> _commodities;

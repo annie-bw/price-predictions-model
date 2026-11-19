@@ -163,14 +163,14 @@ void main() {
   group('Market and commodity lists', () {
     test('the API lists replace the built-in ones, so new names are suggested', () async {
       final repository = loadTestRepository();
-      expect(repository.searchCommodities('peach'), isEmpty);
+      expect(repository.searchCommodities('test'), isEmpty);
 
       final apiLists = {
         'markets': [
           {'market': 'Butare', 'province': 'Southern Province', 'district': 'Huye',
            'latitude': -2.6, 'longitude': 29.74},
         ],
-        'commodities': [...repository.commodities, 'Peaches'],
+        'commodities': [...repository.commodities, 'Test commodity'],
       };
       final client = MockClient((request) async {
         expect(request.url.path, '/reference');
@@ -178,7 +178,7 @@ void main() {
       });
 
       expect(await repository.refreshFromApi(client: client), isTrue);
-      expect(repository.searchCommodities('peach'), ['Peaches']);
+      expect(repository.searchCommodities('test'), ['Test commodity']);
       expect(repository.findMarket('butare')?.district, 'Huye');
     });
 
