@@ -101,6 +101,24 @@ def test_predict_still_works_after_retraining(retrained):
     assert response.json()["predicted_price"] > 0
 
 
+def test_a_new_commodity_can_be_predicted_after_retraining(client):
+    # Peaches appear in the 2026 data: same markets and months as Maize, about 1,800 RWF/kg.
+    rows = pd.read_csv(NEW_DATA)
+    peaches = rows[rows["commodity"] == "Maize"].copy()
+    peaches["commodity"] = "Peaches"
+    peaches["price"] = 1800 * np.random.default_rng(1).uniform(0.9, 1.1, len(peaches))
+    peach_input = dict(VALID_INPUT, commodity="peaches")
+
+    assert client.post("/predict", json=peach_input).status_code == 422  # unknown before
+
+    response = client.post("/retrain", files=csv_upload(pd.concat([rows, peaches])))
+
+    assert response.json()["accepted"] is True
+    after = client.post("/predict", json=peach_input)
+    assert after.status_code == 200
+    assert 1200 < after.json()["predicted_price"] < 2700
+
+
 def test_retrain_with_shuffled_prices_is_rejected_and_old_model_keeps_serving(client):
     rows = pd.read_csv(NEW_DATA)
     rows["price"] = np.random.default_rng(42).permutation(rows["price"].to_numpy())

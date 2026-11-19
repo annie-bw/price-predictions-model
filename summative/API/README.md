@@ -136,6 +136,19 @@ wrong, the newest-month comparison rejects the candidate. But a file where every
 including the newest, is off by the same moderate factor will be accepted. Check the
 units and the scale of a file before uploading it, and use `POST /rollback` if needed.
 
+### New commodities and markets
+
+A CSV can bring a commodity or market the model has never seen, for example **Peaches**.
+The rows are not rejected for their name. If the retrain is accepted, the new model has
+learned the new name and `/predict` accepts it straight away. Before that, it returns 422
+("Unknown commodity…"), because the model would have no prices to learn from.
+`test_a_new_commodity_can_be_predicted_after_retraining` checks this.
+
+Give the new commodity rows in several months, so the model sees it in training and not
+only in the newest month (which is kept aside as the check set). The app's suggestion list
+is built into the app, so a new name does not appear in the suggestions, but it can still
+be typed in the field.
+
 ## Memory (Render free plan: 512 MB)
 
 Measured locally while retraining with `new_data.csv`:
@@ -172,4 +185,4 @@ rows are lost when the service restarts, and it starts again from `best_model.pk
 | `requirements.txt` | The packages Render installs, exported from `uv.lock`. |
 | `tools/measure_band.py` | Measured the band on `new_data.csv` and wrote `model/model_info.json`. |
 | `tests/conftest.py` | Test setup: runs the API on a temporary copy of the model and data. |
-| `tests/test_api.py` | The pytest tests (19). |
+| `tests/test_api.py` | The pytest tests (20). |
