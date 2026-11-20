@@ -1,4 +1,4 @@
-# Maths Summative: Rwanda Food Price Predictor (Flutter app)
+# Rwanda Food Price Predictor (Flutter app)
 
 A one-page app that sends 8 inputs to the API's `/predict` endpoint and shows the
 predicted retail price (RWF per kg) with its likely range.
