@@ -2,7 +2,7 @@
 
 ## Mission and problem
 
-My mission is to use technology to solve Africa's agricultural challenges by developing practical digital solutions that increase productivity, improve market access, create employment opportunities for youth, and strengthen food security for future generations.
+My mission is to use technology to solve Africa's agricultural challenges, improving productivity, market access, youth employment and food security.
 
 Rwandan farmers and small traders rarely know what a crop will sell for before they take it to market.
 This project predicts the retail price (RWF per kg) of a food in a given market and month,
