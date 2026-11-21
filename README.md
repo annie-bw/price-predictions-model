@@ -2,7 +2,8 @@
 
 ## Mission and problem
 
-My mission is to use technology to solve Africa's agricultural challenges and strengthen food security.
+My mission is to use technology to solve Africa's agricultural challenges by developing practical digital solutions that increase productivity, improve market access, create employment opportunities for youth, and strengthen food security for future generations.
+
 Rwandan farmers and small traders rarely know what a crop will sell for before they take it to market.
 This project predicts the retail price (RWF per kg) of a food in a given market and month,
 so they can decide when and where to sell, and NGOs can spot markets where food is getting too expensive.
@@ -10,7 +11,7 @@ so they can decide when and where to sell, and NGOs can spot markets where food 
 ## Dataset
 
 - **Name:** Rwanda – Food Prices (World Food Programme)
-- **Source:** Humanitarian Data Exchange (HDX): https://data.humdata.org/dataset/wfp-food-prices-for-rwanda
+- **Source:** Humanitarian Data Exchange (HDX): https://data.humdata.org/dataset/wfp-food-prices-for-rwanda, Rwanda food-prices.csv
 - **Collected by:** WFP, MINAGRI and FAO (GIEWS/FPMA), updated every month.
 - **Description:** monthly food prices from Rwandan markets, about 158,000 rows and
   16 columns (2000–2026), covering 109 markets in all 5 provinces and 65 commodities.
@@ -28,7 +29,7 @@ take up to a minute.
 
 ## Video demo
 
-YouTube: *add the link here*
+YouTube: *(https://studio.youtube.com/channel/UCuyCEHB8JiAktevuChL43bw/videos/upload?filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D)*
 
 ## Run the mobile app
 
